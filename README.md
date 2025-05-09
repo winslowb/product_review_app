@@ -23,9 +23,9 @@ These instructions will get a copy of the project up and running on your local m
 - Bundler (usually installed with Ruby/Rails)
 
 ### Installation
+```
 Clone the repository from GitHub:
 
-```
 gh repo clone winslowb/product_review_app
 
 cd product_review_app
@@ -33,16 +33,10 @@ cd product_review_app
 
 ### Install the required gems:
 ```
-```
-```
-```
-```
-
 bundle install 
 ```
 
 Set up the database:
-
 ```
 rails db:migrate
 ```
