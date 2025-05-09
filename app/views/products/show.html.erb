@@ -1,0 +1,30 @@
+<h1><%= @product.name %></h1>
+<p><%= @product.description %></p>
+
+<h2>Reviews</h2>
+
+<% if @product.reviews.any? %>
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <li>
+        <%# Display the rating, using 0 if review.rating is nil to prevent error %>
+        <p>Rating: <%= '*' * (review.rating || 0) %></p>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet. Be the first!</p>
+<% end %>
+
+<h3>Add a Review</h3>
+
+<%# Render the review form partial %>
+<%= render 'reviews/form', product: @product, review: @review %>
+
+<%# Display flash messages (like the success notice) %>
+<% if notice %>
+  <p style="color: green;"><%= notice %></p>
+<% end %>
+
+<%= link_to 'Back to Products', products_path %>
